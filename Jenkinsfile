@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout from GitHub') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/psivaramps/<>.git'
+                    url: 'https://github.com/psivaramps/nodeapp-jenkins-docker.git'
             }
         }
 
@@ -42,8 +42,8 @@ pipeline {
           stage('Check Application with curl') {
             steps {
                 script {
-                    sh "curl -f http://192.168.208.128/:5000"
-                    //sh "curl -f http://localhost:5000"  // Replace PORT and ENDPOINT
+                    //sh "curl -f http://192.168.208.128/:5000"
+                    sh "curl -f http://localhost:5000"  // Replace PORT and ENDPOINT
                         }
                     }
             }
